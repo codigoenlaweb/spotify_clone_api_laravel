@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Controllers
 use App\Http\Controllers\api\UserController;
+use App\Http\Controllers\api\v1\ArtistController as ArtistControllerV1;
 use App\Http\Controllers\api\v1\GenreController as GenreControllerV1;
 
 
@@ -27,6 +28,11 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 });
 
 
+Route::get('/artist', [ArtistControllerV1::class, 'index']);
+Route::post('/artist/create', [ArtistControllerV1::class, 'store']);
+Route::get('/artist/{id}', [ArtistControllerV1::class, 'show']);
+Route::put('/artist/{id}/update', [ArtistControllerV1::class, 'update']);
+Route::delete('/artist/{id}/delete', [ArtistControllerV1::class, 'destroy']);
 
 
 
