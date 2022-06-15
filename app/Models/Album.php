@@ -9,6 +9,15 @@ class Album extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'cover',
+        'label',
+        'release_date',
+        'genre_id',
+        'artist_id',
+    ];
+
     // many to one relationship
     public function artist()
     {

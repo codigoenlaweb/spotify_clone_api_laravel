@@ -9,6 +9,12 @@ class Artist extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'last_name',
+        'picture',
+    ];
+
     // one to many relationship
     public function albums()
     {

@@ -9,6 +9,16 @@ class Track extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'title_short',
+        'duration_secons',
+        'preview_url',
+        'song_url',
+        'release_date',
+        'album_id',
+    ];
+
     // many to one relationship
     public function album()
     {

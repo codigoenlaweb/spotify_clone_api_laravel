@@ -9,6 +9,10 @@ class Genre extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+    ];
+
     // one to many relationship
     public function albums()
     {
