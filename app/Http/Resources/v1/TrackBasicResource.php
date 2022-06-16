@@ -4,7 +4,7 @@ namespace App\Http\Resources\v1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ArtistBasicResource extends JsonResource
+class TrackBasicResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,13 @@ class ArtistBasicResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'picture' => asset('storage/' . $this->picture),
+            'title' => $this->title,
+            'title_short' => $this->title_short,
+            'duration_seconds' => $this->duration_secons,
+            'preview_url' => $this->preview_url,
+            'song_url' => $this->song_url,
+            'lyrics' => $this->lyrics,
+            'release_date' => $this->release_date,
         ];
     }
 }

@@ -27,7 +27,6 @@ class ArtistController extends Controller
 
             $artist = Artist::create([
                 'name' => $request->name,
-                'last_name' => $request->last_name,
                 'picture' => $img,
             ]);
 
@@ -76,13 +75,11 @@ class ArtistController extends Controller
 
             $artist->update([
                 'name' => $request->name,
-                'last_name' => $request->last_name,
                 'picture' => $img,
             ]);
         } else {
             $artist->update([
                 'name' => $request->name,
-                'last_name' => $request->last_name,
             ]);
         }
 

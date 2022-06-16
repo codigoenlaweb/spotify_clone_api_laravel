@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('artists', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
-            $table->string('last_name', 30);
+            $table->string('name', 60);
             $table->string('picture')->nullable();
             $table->timestamps();
         });

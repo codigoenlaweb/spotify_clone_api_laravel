@@ -8,7 +8,7 @@ use App\Http\Controllers\api\UserController;
 use App\Http\Controllers\api\v1\AlbumController as AlbumControllerV1;
 use App\Http\Controllers\api\v1\ArtistController as ArtistControllerV1;
 use App\Http\Controllers\api\v1\GenreController as GenreControllerV1;
-
+use App\Http\Controllers\api\v1\TrackController as TrackControllerV1;
 
 // Routes
 Route::post('/register', [UserController::class, 'register']);
@@ -40,6 +40,14 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/album/{id}', [AlbumControllerV1::class, 'show']);
     Route::put('/album/{id}/update', [AlbumControllerV1::class, 'update']);
     Route::delete('/album/{id}/delete', [AlbumControllerV1::class, 'destroy']);
+
+    // tracks
+    Route::get('/track', [TrackControllerV1::class, 'index']);
+    Route::post('/track/create', [TrackControllerV1::class, 'store']);
+    Route::get('/track/{id}', [TrackControllerV1::class, 'show']);
+    Route::put('/track/{id}/update', [TrackControllerV1::class, 'update']);
+    Route::delete('/track/{id}/delete', [TrackControllerV1::class, 'destroy']);
+    Route::get('search/track', [TrackControllerV1::class, 'searchTrack']);
 });
 
 

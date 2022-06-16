@@ -24,8 +24,7 @@ class SaveArtistRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:30',
-            'last_name' => 'required|string|max:30',
+            'name' => 'required|string|max:60',
             'picture' => 'nullable|max:4000|mimes:jpeg,png,jpg',
         ];
     }

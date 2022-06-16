@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('duration_secons');
             $table->string('preview_url');
             $table->string('song_url');
+            $table->text('lyrics')->nullable();
             $table->date('release_date');
             $table->unsignedBigInteger('album_id');
 
